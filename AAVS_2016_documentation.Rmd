@@ -62,18 +62,13 @@ dta <- data.frame(stringsAsFactors=FALSE,
 
 ## Summary Information
 
-I separated the estimates into separate tables by year and estimate. I also included estimates for 2012 and 2016, in case you want comparisons. Each table has the same set up with the following column names:
+The data is extracted from cross table file `spring16aavs-crosstabs.xlsx` using tabula pdf extraction software. The extracted raw data raw_survey_tables.xlsx is divided into separate sheets: ethnic1, gender2, age3, nativity4 and geo based on the break-down groups in the cross table. There are geo5, geo6, geo7, geo8, geo9, geo10, geo11, geo12 and geo13 based on different geographic breakdowns. 
 
-\begin{urbnbullets}
-  \item  The data is extracted from cross table file `spring16aavs-crosstabs.xlsx` using tabula pdf extraction software.
-  \item The extracted raw data raw_survey_tables.xlsx is divided into separate sheets: ethnic1, gender2, age3, nativity4 and geo based on the break-down groups in the cross table. There are geo5, geo6, geo7, geo8, geo9, geo10, geo11, geo12 and geo13 based on different geographic breakdowns.
-  \item The list of survey questions `questionID.xlsx` is extracted from the cross table file. `tableID` refers to the order of the tables from the original cross table file
-  \item `keyID.csv` refers to the survey question choices from all the tables. It is stored separately to reduce storage space.
-  \item `groupID.csv` refers to the different group breakdowns: Asian Indian, Chinese, Filipino, ect. (group_type = ethnic), Male, Female (group_type = gender). 
-  \item `typeID.csv` refers to types of groups (ethnic, age, gender, nativity, geo1, geo2, ect)
-\end{urbnbullets}
+- The list of survey questions `questionID.xlsx` is extracted from the cross table file. `tableID` refers to the order of the tables from the original cross table file.
+- `keyID.csv` refers to the survey question choices from all the tables. It is stored separately to reduce storage space.
+- `groupID.csv` group breakdowns: Asian Indian, Chinese, Filipino,Male, Female, etc.
+- `typeID.csv` refers to types of groups (ethnic, age, gender, nativity, geo1, geo2, ect)
 
-Here's a table with all the information:
 
 ```{r}
 dta %>%
