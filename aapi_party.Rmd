@@ -72,13 +72,12 @@ dta <- data.frame(stringsAsFactors=FALSE,
 
 I separated the estimates into separate tables by year and estimate. I also included estimates for 2012 and 2016, in case you want comparisons. Each table has the same set up with the following column names:
 
-\begin{urbnbullets}
-  \item  `state` = State Name
-  \item `racial group` = Racial Group (Asian Alone, White non-Hispanic, Hispanic any race, Black)
-  \item `estimate` = the point estimate as a proportion
-  \item ` low` = Low c.i.
-  \item `high` = High c.i.
-\end{urbnbullets}
+- `state` = State Name
+-  `racial group` = Racial Group (Asian Alone, White non-Hispanic, Hispanic any race, Black)
+-  `estimate` = the point estimate as a proportion
+- ` low` = Low c.i.
+- `high` = High c.i.
+
 
 Here's a table with all the information:
 
