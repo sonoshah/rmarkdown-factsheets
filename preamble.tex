@@ -17,7 +17,7 @@
 
 % set font encoding for PDFLaTeX or XeLaTeX
 \usepackage[utf8]{inputenc}   % sets document encoding to utf8
-\usepackage[default]{lato}    % sets default font to Lato
+\usepackage[default]{roboto}    % sets default font to Lato
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -25,7 +25,7 @@
 \usepackage{amssymb}          % for itemized list styles
 
 % document setup
-\definecolor{urbnblue}{HTML}{1696D2}    % defines the Urban Institute blue color
+\definecolor{aapidata_organge}{HTML}{E9797E}    % defines the Urban Institute blue color
 \usepackage{enumitem}                   % bullet alignment
 \setlist[2]{nosep}                      % sets the itemsep and parsep for all level two lists to 0
 \setenumerate{nosep}                    % sets no itemsep for enumerate lists only
@@ -33,11 +33,11 @@
 \usepackage[hang,flushmargin]{footmisc} % don't indent footnotes
 \usepackage[document]{ragged2e}         % ragged right
 \usepackage[none]{hyphenat}             % disable work breaks
-\renewcommand\thefootnote{\textcolor{urbnblue}{\arabic{footnote}}} % change the color of the footnote indicator
+\renewcommand\thefootnote{\textcolor{aapidata_organge}{\arabic{footnote}}} % change the color of the footnote indicator
 \hypersetup{
   colorlinks,
-  linkcolor=urbnblue,
-  urlcolor=urbnblue,
+  linkcolor=aapidata_organge,
+  urlcolor=aapidata_organge,
 }
 \usepackage{parskip}
 \setlength{\parskip}{0.1in}               % set paragraph spacing
@@ -49,15 +49,14 @@
   \begin{tikzpicture}[remember picture, overlay]
     \draw 
       node[anchor=south west, minimum height=0.5in, minimum width=8.5in, text width=8in] at ($(current page.south west) + (0.75in,0.13in)$) 
-      {\color{gray}Urban Institute \space
-      \color{urbnblue}$\blacksquare$ \space
-      \color{gray}2100 M Street NW \space
-      \color{urbnblue}$\blacksquare$ \space
-      \color{gray}Washington, DC 20037 \space
-      \color{urbnblue}$\blacksquare$ \space
-      \color{gray}202.833.7200 \space
-      \color{urbnblue}$\blacksquare$ \space
-      \textcolor{urbnblue}{www.urban.org}};
+      {\color{gray}AAPI DATA \space
+      \color{aapidata_organge}$\blacksquare$ \space
+      \color{gray}900 University Ave \space
+      \color{aapidata_organge}$\blacksquare$ \space
+      \color{gray}Riverside, CA \space
+      \color{aapidata_organge}$\blacksquare$ \space
+      \color{aapidata_organge}$\blacksquare$ \space
+      \textcolor{aapidata_organge}{www.aapidata.com}};
   \end{tikzpicture}
 }
 
@@ -71,7 +70,7 @@
 % subtitles (12pt font)
 \newcommand{\urbnsubtitle}[1]{
   \begin{center}
-    \Large{\textcolor{urbnblue}{#1}}
+    \Large{\textcolor{aapidata_organge}{#1}}
     \vspace{0.25in}    
   \end{center}
 }
@@ -91,12 +90,12 @@
 
 % heading 2
 \newcommand{\urbnheadingtwo}[1]{
-  \textbf{\textcolor{urbnblue}{#1}}
+  \textbf{\textcolor{aapidata_organge}{#1}}
 }
 
 % figure label
 \newcommand{\urbnfigurenumber}[1]{
-  \textcolor{urbnblue}{\tiny{\\} \normalsize{FIGURE #1 \\}}
+  \textcolor{aapidata_organge}{\tiny{\\} \normalsize{FIGURE #1 \\}}
 }
 
 % figure title
@@ -115,10 +114,10 @@
 }
 
 % bullet points
-\renewcommand{\labelitemi}{\color{urbnblue}\tiny$\blacksquare$}   % blue square
-\renewcommand{\labelitemii}{\color{urbnblue}\tiny$\blacksquare$}  % blue square
-\renewcommand{\labelitemiii}{\color{urbnblue}\tiny$\blacksquare$} % blue square
-\renewcommand{\labelitemiv}{\color{urbnblue}\tiny$\blacksquare$}  % blue square
+\renewcommand{\labelitemi}{\color{aapidata_organge}\tiny$\blacksquare$}   % blue square
+\renewcommand{\labelitemii}{\color{aapidata_organge}\tiny$\blacksquare$}  % blue square
+\renewcommand{\labelitemiii}{\color{aapidata_organge}\tiny$\blacksquare$} % blue square
+\renewcommand{\labelitemiv}{\color{aapidata_organge}\tiny$\blacksquare$}  % blue square
 
 \newenvironment{urbnbullets}
 {\begin{itemize}[leftmargin=*,labelindent=0.25in,labelsep=0.1875in]

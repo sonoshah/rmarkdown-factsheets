@@ -40,3 +40,5 @@ vignettes/*.pdf
 
 # Microsoft word example factsheets
 *word-examples/
+
+.Rhistory
