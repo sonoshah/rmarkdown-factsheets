@@ -1,0 +1,121 @@
+---
+font: roboto
+fontsize: 12pt
+geometry: left=1in,right=1in,top=0.35in,bottom=0.6in
+header-includes: \input{preamble.tex}
+output:
+  pdf_document: default
+  word_document: default
+sansfont: roboto
+urlcolor: null
+---
+
+\raggedright
+
+```{r rmarkdown-setup, include=FALSE}
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(dev = "cairo_pdf")
+options(knitr.kable.NA = "")
+
+dta <- data.frame(stringsAsFactors=FALSE,
+                  Table = c("full table (with text)", "full table (with text)", "full table (with text)",
+                            "full table (with text)", "full table (with text)",
+                            "slim table (with code ID)", "slim table (with code ID)", 
+                            "slim table (with code ID)", "slim table (with code ID)", 
+                            "slim table (with code ID)"),
+               Estimate = c("question", "group_type", "group", "key", "value",
+                            "questionID", "typeID", "groupID", "keyID", "value"),
+   `Meaning` = c("survey question", "type of break-down", "groups within the break-down type",
+                 "one key to the survey question", "percent of the group choosing the key",
+                 "refer to questionID.xlsx", "refer to typeID.csv", "refer to groupID.csv",
+                 "refer to keyID.csv", "percent of the group choosing the key"),
+            `table file` = c("full_table.csv",
+                             "full_table.csv",
+                             "full_table.csv",
+                             "full_table.csv",
+                             "full_table.csv",
+                             "slim_table.csv",
+                             "slim_table.csv",
+                             "slim_table.csv",
+                             "slim_table.csv",
+                             "slim_table.csv"),
+          `Raw Crosstabs` = c("raw_survey_tables.xlsx", "raw_survey_tables.xlsx", "raw_survey_tables.xlsx", 
+                              "raw_survey_tables.xlsx", "raw_survey_tables.xlsx", "raw_survey_tables.xlsx", 
+                              "raw_survey_tables.xlsx", "raw_survey_tables.xlsx", "raw_survey_tables.xlsx", 
+                              "raw_survey_tables.xlsx")
+)
+
+```
+
+\begin{figure}
+  \hspace{-0.12in}
+  \includegraphics[width=1.5in]{design/aapidata-logo-lighter.png}
+  \label{fig:boat1}
+\end{figure}
+
+\urbntitle{Asian American Voter Survey 2016 - Public Opinion Database}
+\urbnsubtitle{Data \& Methods Memo}
+
+## Summary Information
+
+I separated the estimates into separate tables by year and estimate. I also included estimates for 2012 and 2016, in case you want comparisons. Each table has the same set up with the following column names:
+
+\begin{urbnbullets}
+  \item  The data is extracted from cross table file `spring16aavs-crosstabs.xlsx` using tabula pdf extraction software.
+  \item The extracted raw data raw_survey_tables.xlsx is divided into separate sheets: ethnic1, gender2, age3, nativity4 and geo based on the break-down groups in the cross table. There are geo5, geo6, geo7, geo8, geo9, geo10, geo11, geo12 and geo13 based on different geographic breakdowns.
+  \item The list of survey questions `questionID.xlsx` is extracted from the cross table file. `tableID` refers to the order of the tables from the original cross table file
+  \item `keyID.csv` refers to the survey question choices from all the tables. It is stored separately to reduce storage space.
+  \item `groupID.csv` refers to the different group breakdowns: Asian Indian, Chinese, Filipino, ect. (group_type = ethnic), Male, Female (group_type = gender). 
+  \item `typeID.csv` refers to types of groups (ethnic, age, gender, nativity, geo1, geo2, ect)
+\end{urbnbullets}
+
+Here's a table with all the information:
+
+```{r}
+dta %>%
+  kable( booktabs = T) %>% 
+  kable_styling(latex_options="scale_down")
+```
+\contactinfo{}
+
+\newpage
+## Notes
+
+All this data is located in this folder: 
+
+- `Dropbox/AAPIData HQ/Projects/opinion database/AAVS-2016`
+
+### List of Files
+
+- Raw AAVS 2016 crosstab report: 
+  `spring16aavs-crosstabs.pdf`
+
+- Raw extracted crostab data: 
+  `raw_survey_tables.xlsx`
+  
+- question ID lookup table: 
+  `questionID.xlsx`
+
+- key ID lookup table: 
+  `keyID.csv`
+
+- group ID lookup table: 
+  `groupID.csv`
+
+- Dofile to get the file cleaned and ready:
+  `AAPIData HQ/Projects/opinion database/report_extract.R`
+  
+- type ID lookup table: 
+  `typeID.csv`
+  
+- Full version table with text: 
+  `full_table.csv`
+
+- Slim version table with coded label: 
+  `slim_table.csv`
+  
+
